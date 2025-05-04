@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untuk Lia 😈</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to top right, #ffe6e6, #fff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      color: #444;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2em;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    #confessBtn {
+      background-color: #ff4d6d;
+    }
+
+    #confessBtn:hover {
+      background-color: #ff1a4c;
+    }
+
+    #message {
+      margin-top: 2em;
+      opacity: 0;
+      transition: opacity 1s ease;
+      font-size: 1.5rem;
+      max-width: 80%;
+    }
+
+    #message.show {
+      opacity: 1;
+    }
+
+    .heart {
+      font-size: 2rem;
+      color: #ff4d6d;
+      animation: pulse 1.2s infinite;
+    }
+
+    .response-buttons {
+      display: none;
+      margin-top: 2em;
+      gap: 1em;
+    }
+
+    .response-buttons.show {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .accept {
+      background-color: #28a745;
+    }
+
+    .accept:hover {
+      background-color: #218838;
+    }
+
+    .reject {
+      background-color: #dc3545;
+    }
+
+    .reject:hover {
+      background-color: #c82333;
+    }
+
+    #notif {
+      margin-top: 1em;
+      font-weight: bold;
+      color: #dc3545;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Buat Lia Maria 😈</h1>
+  <p>Pencet tuh dibawah 🥺</p>
+  <button id="confessBtn" onclick="showMessage()">Klik di sini</button>
+
+  <div id="message">
+    <p>Sesungguhnya... Aku suka Lu Kak<br>jadi boleh gak kita berpacaran??🥺🥺</p>
+    <div class="heart">❤️</div>
+
+    <div class="response-buttons" id="responseButtons">
+      <button class="accept" onclick="acceptLove()">Terima 💚</button>
+      <button class="reject" id="rejectBtn" onclick="rejectLove()">Tolak 💔</button>
+    </div>
+
+    <div id="notif"></div>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("message").classList.add("show");
+      document.getElementById("responseButtons").classList.add("show");
+    }
+
+    function acceptLove() {
+      document.getElementById("notif").innerText = "Lesgoooooooo, plis kasi tau aku diWA jawabn kau. aku masi blum bisa buat fitur buat kasi tau jwaban kau ke aku... hehehehe";
+    }
+
+    function rejectLove() {
+      const notif = document.getElementById("notif");
+      notif.innerText = "GABISA DIPENCET WLEKKKKKKK 🤪🤪";
+
+      // Gerakkan tombol ke posisi acak setelah diklik
+      const btn = document.getElementById("rejectBtn");
+      const x = Math.floor(Math.random() * (window.innerWidth - 100));
+      const y = Math.floor(Math.random() * (window.innerHeight - 50));
+      btn.style.position = "absolute";
+      btn.style.left = `${x}px`;
+      btn.style.top = `${y}px`;
+    }
+  </script>
+</body>
+</html>
